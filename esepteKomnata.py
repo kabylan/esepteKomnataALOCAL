@@ -15,8 +15,6 @@ class EsepteKomnata():
 
     def __init__(self):
 
-        # uploaded image to recognize path
-        self.image_path = "C:\\Users\\esept\\Downloads\\EsepteKomnataUploads\\"
 
         # komnata types
         self.komnataTypes = [
@@ -89,8 +87,11 @@ class EsepteKomnata():
         # return [secondA, secondB]
 
     def prepareImage(self, imageName):
-        
-        komnata = image.load_img(self.image_path + imageName, target_size = (200, 200))
+
+        # uploaded image to recognize path
+        image_path = "C:\\Users\\esept\\source\\repos\\EsepteApi\\EsepteApi\\wwwroot\\Uploads\\"
+
+        komnata = image.load_img(image_path + imageName, target_size = (200, 200))
         #komnata = image.load_img("/home/apollo/Downloads/Stroka.kg/" + imageName, target_size = (200, 200))
         #komnata = image.load_img(imageName, target_size = (200, 200))
         komnata = image.img_to_array(komnata)
